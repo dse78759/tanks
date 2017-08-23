@@ -5,16 +5,27 @@ class a extends Thread {
 	static boolean locked;
 
 	a () { 
-		System.out.println (
 
-		aa= 4; locked =false;}
+		aa= 4; 
+		locked =false;
+	}
+	a( String name ) {
+		super();
+		this.setName(name);
+		
+	}
 
+	/** add up a bunch of numbers
+	 * 
+	 */
 	synchronized public void run () {
+
+		System.out.println("in run for " + this.getName() );
 
 		try {
 
 		if ( locked = true ) {
-
+			// will block until another thread calls notify
 			wait (); 
 		}
 
